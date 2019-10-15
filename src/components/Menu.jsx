@@ -13,9 +13,9 @@ const Menu = (props) => {
   let icons = ['npm', 'github', 'linkedin', 'codepen', 'linkedin'];
   return (
     <div id="menu" className='menu'>
-      <div className="menu-button">
-        <img src={logo} alt="logo" onClick={handleClick}/>
-      </div>
+      <button className="menu-button" onClick={handleClick}>
+        <img src={logo} alt="logo"/>
+      </button>
 
       <nav className={CN("menu-nav", { "active": props.isOpen })}>
         <ul>

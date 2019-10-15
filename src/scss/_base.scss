@@ -39,14 +39,14 @@ html {
 }
 
 body {
-	color: v(font-color);
-	font-size: v(text);
-	font-family: v(text-font);
-	background-image: v(grad-bg);
+	color: var(--font-color);
+	font-size: var(--text);
+	font-family: var(--text-font);
+	background-image: var(--grad-bg);
 }
 
 .container {
-	padding: 0 v(space-md);
+	padding: 0 var(--space-md);
 	max-width: 900px;
 	margin: auto;
 
@@ -56,7 +56,7 @@ body {
 }
 
 a {
-	color: v(font-color);
+	color: var(--font-color);
 	text-decoration: none;
 	/* no underline */
 }
@@ -84,7 +84,7 @@ button {
 .visible-md {
 	display: none;
 
-	@include media(md) {
+	@include media {
 		display: inline-flex;
 	}
 }

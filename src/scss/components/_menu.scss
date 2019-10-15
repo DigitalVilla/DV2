@@ -1,6 +1,6 @@
 .menu {
 	// constants
-	$vertical: true;
+	$vertical: false;
 	$menu-items: 5;
 	// variables
 	--btn-width: 54px;
@@ -17,29 +17,20 @@
 	z-index: 1000;
 
 	&-button {
-		cursor: pointer;
 		height: 100%;
-		position: relative;
-		width: auto;
-		z-index: 3;
 
 		img {
 			animation: fadeIn 1s ease-in-out;
-			height: 100%;
-			width: 100%;
-			object-fit: contain;
 		}
 	}
 
 	&-nav {
-		position: absolute;
+		height: 0;
+		width: 0;
 		overflow: hidden;
-		z-index: 1;
+		position: absolute;
 		transition: all .1s;
 		transition-delay: .6s;
-		width: 0;
-		height: 0;
-
 
 		@if $vertical {
 			top: var(--btn-height);
@@ -67,10 +58,7 @@
 
 		ul {
 			font-size: 2.5rem;
-			list-style: none;
-			display: flex;
-			align-content: center;
-			justify-content: space-between;
+			@include flex(space-between);
 
 			@if $vertical {
 				padding-top: var(--gutter);
@@ -79,15 +67,13 @@
 			}
 
 			@else {
-				// padding-right: var(--gutter);
+				padding-right: calc(var(--gutter)/2);
 			}
 
 			li {
 				height: var(--btn-height);
 				width: var(--btn-width);
-				display: flex;
-				align-content: center;
-				justify-content: center;
+				@include flex(center);
 
 				@if $vertical {
 					margin: 0 auto;
@@ -138,12 +124,12 @@
 		}
 	}
 
-	@include media (md) {
+	@include media {
 		--btn-size: 40px;
-		--gutter: 24px;
 		--btn-width: 72px;
 		--btn-height: 40px;
-		--position: 36px;
+		--gutter: var(--space-lg);
+		--position: var(--space-xl);
 
 		&-button,
 		svg {

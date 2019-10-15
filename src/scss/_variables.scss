@@ -34,8 +34,7 @@
 	--font-color: var(--white);
 	--lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
 	--darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
-	--grad-bg: linear-gradient(to left bottom, var(--brand1), var(--brand3));
-	--grad-bg-light: linear-gradient(to left bottom, darken(var(--brand3), 10%), darken(var(--brand1), 20%));
+	--grad-bg: linear-gradient(to left bottom, var(--brand1), var(--brand3));;
 
 	// Regular font family
 	--text-font: 'Oswald',
