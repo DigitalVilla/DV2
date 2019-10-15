@@ -1,0 +1,120 @@
+//variables
+$arrow-side: 10.5px;
+$arrow-head: 14px;
+$slides-gap: calc(50% - 100px);
+$nav-color: $white;
+
+
+.lineSpan {
+	margin: 0;
+	border-radius: 5px;
+	top: 60%;
+	left: 0;
+	height: 3px;
+	width: $space-lg;
+	background: $nav-color;
+
+	@media only screen and (min-width: $screen-md) {
+		width: $space-xl;
+	}
+}
+
+#fp-nav {
+	animation: bounceInLeft 1s ease-in-out;
+
+	ul {
+		li {
+			height: $space-lg;
+			width: $space-xxl;
+			margin: $space-lg 0;
+
+			&:hover a.active span,
+			a.active span {
+				@extend .lineSpan;
+				width: $space-xl;
+			}
+
+			&:hover a span {
+				@extend .lineSpan;
+			}
+
+			a span {
+				@extend .lineSpan;
+				box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+			}
+
+			.fp-tooltip {
+				color: $nav-color;
+				top: -$space-sm;
+				font-size: 12px;
+
+				&.fp-left {
+					left: 0;
+				}
+
+				&.fp-right {
+					right: 0;
+				}
+			}
+
+			@media only screen and (min-width: $screen-md) {
+				height: $space-xl;
+				margin: $space-lg $space-lg;
+
+				&:hover a.active span,
+				a.active span {
+					width: $space-xxl;
+				}
+
+				.fp-tooltip {
+					font-size: 16px;
+					top: -8px;
+				}
+			}
+
+			@media only screen and (min-width: $screen-lg) {
+				.fp-tooltip {
+					top: -4px;
+				}
+			}
+		}
+	}
+}
+
+.fp-slidesNav {
+	ul {
+		width: auto;
+		text-align: center;
+
+		li {
+			margin: 2px;
+
+			a span {
+				background: #ddd;
+				margin: 0;
+				transition: none;
+			}
+		}
+	}
+}
+
+.fp-controlArrow {
+	bottom: 20px;
+	opacity: .7;
+	top: unset;
+	z-index: 999;
+
+	&.fp-prev {
+		left: $slides-gap;
+		border-width: $arrow-side $arrow-head $arrow-side 0;
+	}
+
+	&.fp-next {
+		right: $slides-gap;
+		border-width: $arrow-side $arrow-side $arrow-head;
+	}
+
+	&:hover {
+		opacity: 1;
+	}
+}

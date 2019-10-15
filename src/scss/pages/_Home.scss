@@ -1,0 +1,141 @@
+@include Page ('Home') {
+	@include animateIn {
+		.main-logo {
+			animation: bounceInDown 1.2s ease-in-out;
+		}
+
+		.title {
+			animation: fadeInRight .7s ease-in-out;
+		}
+
+		h2 {
+			animation: fadeInLeft .7s ease-in-out;
+		}
+
+		video {
+			animation: fadeIn .7s ease-in-out;
+		}
+
+		.scroll {
+			animation: fadeIn 1.2s ease-in-out;
+
+			&-icon {
+				animation: float 2s ease-in-out infinite;
+				animation-delay: 1.6s;
+			}
+		}
+	}
+
+	@include animateOut {
+		.main-logo {
+			animation: fadeOutRight .4s ease-in-out;
+		}
+
+		.title {
+			animation: fadeOutLeft .4s ease-in-out;
+		}
+
+		h2 {
+			animation: fadeOutRight .4s ease-in-out;
+		}
+	}
+
+
+	.header {
+		left: 50%;
+		position: absolute;
+		text-align: center;
+		top: 50%;
+		transform: translate3d(-50%, -50%, 0);
+		z-index: 1;
+
+		.main-logo {
+			height: 8rem;
+			margin: 0 0 $space-md;
+			width: auto;
+
+
+			@include media (md) {
+				height: 13rem;
+				margin: 0 0 $space-lg;
+			}
+		}
+
+		h1 {
+			@include reader-only;
+		}
+
+		.title {
+			color: #fff;
+			font-size: 4.9rem;
+			font-weight: 400;
+			letter-spacing: $space-sm;
+			line-height: .8;
+			margin: 0 0 $space-md;
+			text-align: center;
+			text-transform: uppercase;
+			width: 70vw;
+
+			span {
+				white-space: nowrap;
+			}
+
+			img {
+				height: 4rem;
+				width: auto;
+				padding: 0 $space-sm;
+			}
+		}
+
+		h2 {
+			font-weight: 300;
+			letter-spacing: 1px;
+			text-transform: capitalize;
+			line-height: .8;
+			font-size: 2rem;
+
+			@include media (md) {
+				margin-top: $space-lg;
+				font-size: 2.5rem;
+			}
+		}
+
+		.break {
+			@include media (smDn) {
+				display: block;
+				margin: $space;
+			}
+		}
+	}
+
+	.video-container {
+		video {
+			background-position: center center;
+			object-fit: cover;
+			max-width: 100%;
+			min-width: 100%;
+			min-height: 100%;
+			width: auto;
+			height: auto;
+			z-index: 0;
+			position: absolute;
+			right: 0;
+			top: 0;
+			// opacity: .9;
+		}
+	}
+
+	.scroll {
+		&-icon {
+			z-index: 2;
+			position: absolute;
+			bottom: $space-lg;
+			left: 50%;
+			transform: translate3d(-50%, 0, 0);
+
+			@include media (lg) {
+				bottom: $space-xl;
+			}
+		}
+	}
+}

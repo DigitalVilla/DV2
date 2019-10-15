@@ -1,0 +1,75 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// see: https://codyhouse.co/blog/post/css-custom-properties-vs-sass-variables
+// -----------------------------------------------------------------------------
+
+:root {
+	// Navbar
+	--navbar-height: 50px;
+	--transition: all 0.2s linear;
+
+	//App :default
+	--brand1: #9e1c41;
+	--brand2: #882057;
+	--brand3: #613180;
+	--brand4: #46277e;
+
+	// Service default
+	--success: #239976;
+	--danger: #bd093f;
+	--info: #3f81a1;
+
+	// Greyscale
+	--white: #ffffff;
+	--off-white: #f2f2f2;
+	--grey-lighter: #e0e0e0;
+	--grey-light: #dfdfdf;
+	--grey: #a5a5a5;
+	--grey-medium: #596164;
+	--grey-dark: #38393c;
+	--grey-darker: #231f20;
+	--black: #111122;
+
+	//Custom settings
+	--font-color: var(--white);
+	--lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
+	--darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
+	--grad-bg: linear-gradient(to left bottom, var(--brand1), var(--brand3));
+	--grad-bg-light: linear-gradient(to left bottom, darken(var(--brand3), 10%), darken(var(--brand1), 20%));
+
+	// Regular font family
+	--text-font: 'Oswald',
+		'Open Sans',
+		'Helvetica Neue Light',
+		'Helvetica Neue',
+		'Helvetica',
+		'Arial',
+		sans-serif;
+
+	// Code (monospace) font family
+	--code-font: 'Courier New',
+		'DejaVu Sans Mono',
+		'Bitstream Vera Sans Mono',
+		'Monaco',
+		monospace;
+
+	// Spacing
+	--space: 8px;
+	--space-xs: calc(var(--space) / 4);
+	--space-sm: calc(var(--space) / 2);
+	--space-md: calc(var(--space) * 1.5);
+	--space-lg: calc(var(--space) * 2);
+	--space-xl: calc(var(--space) * 3);
+	--space-xxl: calc(var(--space) * 5);
+	--space-xxxl: calc(var(--space) * 6);
+
+	// body font size
+	--text: 1em;
+	--text-xs: calc(var(--text) / 4);
+	--text-sm: calc(var(--text) / 2);
+	--text-md: calc(var(--text) * 1.5);
+	--text-lg: calc(var(--text) * 2);
+	--text-xl: calc(var(--text) * 3);
+	--text-xxl: calc(var(--text) * 5);
+	--text-xxxl: calc(var(--text) * 6);
+}

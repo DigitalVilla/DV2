@@ -1,0 +1,19 @@
+// third parties
+@import './vendors/bootstrap/grid';
+//base
+@import './variables';
+@import './mixins';
+@import './base';
+
+@import './base/typography';
+@import './vendors/AniamteCSS/animate.css';
+//components
+@import './components/menu';
+// @import './components/elements';
+// @import './components/fullpage';
+//pages
+// @import './pages/BasePage';
+// @import './pages/Home';
+// @import './pages/About';
+// @import './pages/Works';
+// @import './pages/Contact';

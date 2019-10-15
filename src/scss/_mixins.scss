@@ -1,0 +1,191 @@
+// RESPONSIVE .BREAKPOINTS
+
+// Extra small mobile
+$min-width: 320px;
+// Small mobile
+$screen-xs: 360px;
+// Large mobile
+$screen-sm: 576px;
+// Small Tablet
+$screen-md: 768px;
+// Large Tablet
+$screen-lg: 992px;
+// iPad pro
+$screen-xl: 1200px;
+// laptop
+$screen-xxl: 1600px;
+// HD desktop
+$screen-xxl: 1920px;
+// $K Desktop
+$screen-4k: 3800px;
+
+/* -----------------------
+   ------ Functions ------
+   ----------------------- */
+
+@function v($var) {
+	@return var(--#{$var});
+}
+
+
+/* ---------------------
+   ------ MIXINS ------
+   -------------------- */
+
+@mixin abs ($top, $right, $bottom:auto, $left:auto) {
+	position: absolute;
+	top: $top;
+	right: $right;
+	bottom: $bottom;
+	left: $left;
+}
+
+
+/* position absolute
+  @include flex(2rem, 3rem, auto, auto);
+*/
+@mixin flex ($justify, $align:center, $direction:false) {
+	display: flex;
+	align-items: $align;
+	justify-content: $justify;
+
+	@if $direction {
+		flex-direction: $direction;
+	}
+}
+
+
+/// Event wrapper
+/// @param {Bool} $self [false] - Whether or not to include current selector
+@mixin on-event($self: false) {
+	@if $self {
+
+		&,
+		&:hover,
+		&:active,
+		&:focus {
+			@content;
+		}
+	}
+
+	@else {
+
+		&:hover,
+		&:active {
+			@content;
+		}
+	}
+}
+
+// Mobile first approach
+@mixin media($screen:$screen-md, $landscape:false) {
+	@if $landscape {
+		@media only screen and (min-width: $screen) and (orientation: landscape) {
+			@content;
+		}
+	}
+
+	@else {
+		@media only screen and (min-width: $screen) {
+			@content;
+		}
+	}
+}
+
+// Desktop first approach
+@mixin mediaDn($screen:$screen-md) {
+	@if $landscape {
+		@media only screen and (min-width: $screen - 1px) and (orientation: landscape) {
+			@content;
+		}
+	}
+
+	@else {
+		@media only screen and (min-width: $screen - 1px) {
+			@content;
+		}
+	}
+}
+
+
+// Display mixins
+@mixin show ($screen:$screen-md) {
+	display: none;
+
+	@media only screen and (min-width: $screen) {
+		display: block;
+	}
+}
+
+@mixin hide ($screen:$screen-md) {
+	display: block;
+
+	@media only screen and (min-width: $screen) {
+		display: none;
+	}
+}
+
+
+/* -----------------------
+   ------ Extensions ------
+   ----------------------- */
+
+/* vertical alignment */
+.vertical-align {
+	position: relative;
+	top: 50%;
+	-ms-transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+/* center abdolute */
+.abs-center {
+	top: 50%;
+	left: 50%;
+	position: absolute;
+	transform: translate(-50%, -50%);
+}
+
+/* Text shortening
+@include text-shorten();
+*/
+.text-shorten {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.clearfix {
+	&::after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+/**
+ * Hide text while making it readable for screen readers
+ */
+.hide-text {
+	overflow: hidden;
+	padding: 0;
+	/* 1 */
+	text-indent: 101%;
+	white-space: nowrap;
+}
+
+/**
+ * Hide element while making it readable for screen readers
+ *  from HTML5Boilerplate:
+ */
+.reader-only {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}

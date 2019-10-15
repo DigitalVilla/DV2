@@ -1,0 +1,155 @@
+.menu {
+	// constants
+	$vertical: true;
+	$menu-items: 5;
+	// variables
+	--btn-width: 54px;
+	--btn-height: 25px;
+	--position: var(--space);
+	--gutter: var(--space);
+	--nav-size: calc((var(--btn-height) + var(--gutter)) * #{$menu-items});
+
+	position: absolute;
+	height: var(--btn-height);
+	width: var(--btn-width);
+	top: var(--position);
+	right: var(--position);
+	z-index: 1000;
+
+	&-button {
+		cursor: pointer;
+		height: 100%;
+		position: relative;
+		width: auto;
+		z-index: 3;
+
+		img {
+			animation: fadeIn 1s ease-in-out;
+			height: 100%;
+			width: 100%;
+			object-fit: contain;
+		}
+	}
+
+	&-nav {
+		position: absolute;
+		overflow: hidden;
+		z-index: 1;
+		transition: all .1s;
+		transition-delay: .6s;
+		width: 0;
+		height: 0;
+
+
+		@if $vertical {
+			top: var(--btn-height);
+		}
+
+		@else {
+			left: calc(var(--nav-size) * -1);
+			top: 0;
+		}
+
+		&.active {
+			transition: all .1s;
+			transition-delay: 0;
+
+			@if $vertical {
+				height: var(--nav-size);
+				width: 100%;
+			}
+
+			@else {
+				width: var(--nav-size);
+				height: 100%;
+			}
+		}
+
+		ul {
+			font-size: 2.5rem;
+			list-style: none;
+			display: flex;
+			align-content: center;
+			justify-content: space-between;
+
+			@if $vertical {
+				padding-top: var(--gutter);
+				flex-direction: column;
+				height: 100%;
+			}
+
+			@else {
+				// padding-right: var(--gutter);
+			}
+
+			li {
+				height: var(--btn-height);
+				width: var(--btn-width);
+				display: flex;
+				align-content: center;
+				justify-content: center;
+
+				@if $vertical {
+					margin: 0 auto;
+				}
+
+				@else {
+					padding-top: 2px;
+				}
+
+				@for $i from 1 through $menu-items {
+					&.hide-#{$i} {
+						opacity: 0;
+
+						@if $vertical {
+							transform: translate(0, calc(var(--nav-size) * -1));
+							transition: all ($i) * .2s;
+						}
+
+						@else {
+							transform: translate(var(--nav-size), 0);
+							transition-property: transform, opacity;
+							transition-duration: ($i) * .15s, 2s;
+						}
+					}
+
+					&.show-#{$i} {
+						&.active {
+							opacity: 1;
+							transform: translate3d(0, 0, 0);
+
+							@if $vertical {
+								transition-property: transform, opacity;
+								transition-duration: ($i) * .15s, .8s;
+							}
+
+							@else {
+								transition: all ($i) * .2s;
+							}
+						}
+					}
+				}
+
+				svg {
+					height: calc(var(--btn-height) - 4px);
+					width: calc(var(--btn-height) - 4px);
+				}
+			}
+		}
+	}
+
+	@include media (md) {
+		--btn-size: 40px;
+		--gutter: 24px;
+		--btn-width: 72px;
+		--btn-height: 40px;
+		--position: 36px;
+
+		&-button,
+		svg {
+			&:active {
+				transform: scale3d(.95, .95, 1);
+			}
+		}
+	}
+}
