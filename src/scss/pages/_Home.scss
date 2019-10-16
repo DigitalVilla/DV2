@@ -1,47 +1,7 @@
 @include Page ('Home') {
-	@include animateIn {
-		.main-logo {
-			animation: bounceInDown 1.2s ease-in-out;
-		}
-
-		.title {
-			animation: fadeInRight .7s ease-in-out;
-		}
-
-		h2 {
-			animation: fadeInLeft .7s ease-in-out;
-		}
-
-		video {
-			animation: fadeIn .7s ease-in-out;
-		}
-
-		.scroll {
-			animation: fadeIn 1.2s ease-in-out;
-
-			&-icon {
-				animation: float 2s ease-in-out infinite;
-				animation-delay: 1.6s;
-			}
-		}
-	}
-
-	@include animateOut {
-		.main-logo {
-			animation: fadeOutRight .4s ease-in-out;
-		}
-
-		.title {
-			animation: fadeOutLeft .4s ease-in-out;
-		}
-
-		h2 {
-			animation: fadeOutRight .4s ease-in-out;
-		}
-	}
-
-
 	.header {
+		--base-gutter: calc(var(--space-lg) * .9);
+
 		left: 50%;
 		position: absolute;
 		text-align: center;
@@ -50,41 +10,24 @@
 		z-index: 1;
 
 		.main-logo {
-			height: 8rem;
-			margin: 0 0 $space-md;
-			width: auto;
-
-
-			@include media (md) {
-				height: 13rem;
-				margin: 0 0 $space-lg;
-			}
+			height: calc(var(--text-xxxl) * 1.3);
+			margin: 0 0 var(--base-gutter);
 		}
 
 		h1 {
-			@include reader-only;
+			@extend .reader-only;
 		}
 
 		.title {
 			color: #fff;
-			font-size: 4.9rem;
+			letter-spacing: var(--space-sm);
+			font-size: var(--text-xl);
+			margin: 0 0 var(--base-gutter);
 			font-weight: 400;
-			letter-spacing: $space-sm;
-			line-height: .8;
-			margin: 0 0 $space-md;
+			line-height: .9;
 			text-align: center;
 			text-transform: uppercase;
 			width: 70vw;
-
-			span {
-				white-space: nowrap;
-			}
-
-			img {
-				height: 4rem;
-				width: auto;
-				padding: 0 $space-sm;
-			}
 		}
 
 		h2 {
@@ -92,19 +35,13 @@
 			letter-spacing: 1px;
 			text-transform: capitalize;
 			line-height: .8;
-			font-size: 2rem;
+			font-size: var(--text-md);
 
-			@include media (md) {
-				margin-top: $space-lg;
-				font-size: 2.5rem;
-			}
 		}
 
 		.break {
-			@include media (smDn) {
-				display: block;
-				margin: $space;
-			}
+			@include hide;
+			margin: var(--space);
 		}
 	}
 
@@ -129,13 +66,61 @@
 		&-icon {
 			z-index: 2;
 			position: absolute;
-			bottom: $space-lg;
+			bottom: var(--space-lg);
 			left: 50%;
 			transform: translate3d(-50%, 0, 0);
 
-			@include media (lg) {
-				bottom: $space-xl;
+			@include media ($screen-lg) {
+				bottom: var(--space-xl);
 			}
 		}
+	}
+}
+@include animateIn('Home') {
+	.main-logo {
+		animation: bounceInDown calc(var(--delay) + .2s) ease-in-out;
+	}
+
+	.title {
+		animation: fadeInRight var(--delay) ease-in-out;
+	}
+
+	h2 {
+		animation: fadeInLeft var(--delay) ease-in-out;
+	}
+
+	video {
+		opacity: 1;
+		animation: fadeInDelayed var(--delay) ease-in-out;
+	}
+	.page-bg  {
+		animation: fadeIn var(--delay) ease-in-out;
+	}
+
+	.scroll {
+		animation: fadeInDelayed var(--delay) ease-in-out;
+		&-icon {
+			animation: float 2s ease-in-out infinite;
+			animation-delay: var(--delay);
+		}
+	}
+}
+
+@include animateOut('Home') {
+	--delay : .4s;
+	.main-logo {
+		animation: fadeOutRight var(--delay) ease-in-out;
+	}
+
+	.title {
+		animation: fadeOutLeft var(--delay) ease-in-out;
+	}
+	video {
+		opacity: 0;
+		animation: fadeOut var(--delay) ease-in-out;
+	}
+
+	h2 {
+		animation: fadeOutRight var(--delay) ease-in-out;
 	}
 }

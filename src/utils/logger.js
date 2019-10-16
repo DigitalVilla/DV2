@@ -15,7 +15,7 @@ export default (rootName, disable) => {
 	 * @returns console invocation
 	 */
 	return (args, code, colorAll) => {
-		if (disable) return () => {};
+		if (true) return () => {};
 
 
 		let mode = '';

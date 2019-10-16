@@ -2,27 +2,6 @@
 // This file contains very basic styles.
 // -----------------------------------------------------------------------------
 
-// Media query {
-:root {
-	@include media($screen-xs) {
-		// --text-scale-ratio: 1.25;
-		--text: 1.2em;
-		--space: 10px;
-	}
-
-	@include media {
-		// --text-scale-ratio: 1.25;
-		--text: 1.4em;
-		--space: 12px;
-	}
-
-	@include media($screen-xxl) {
-		// --text-scale-ratio: 1.3;
-		--text: 1.6em;
-		--space: 14px;
-	}
-}
-
 *,
 ::after,
 ::before {
@@ -42,7 +21,8 @@ body {
 	color: var(--font-color);
 	font-size: var(--text);
 	font-family: var(--text-font);
-	background-image: var(--grad-bg);
+	// background-image: $grad-bg-dark;
+	background-image: var(--grad-bg-dark);
 }
 
 .container {
@@ -58,17 +38,10 @@ body {
 a {
 	color: var(--font-color);
 	text-decoration: none;
-	/* no underline */
 }
 
 li {
 	list-style: none;
-}
-
-img {
-	width: 100%;
-	height: 100%;
-	object-fit: contain;
 }
 
 button {
@@ -88,14 +61,13 @@ button {
 		display: inline-flex;
 	}
 }
-
 .page-bg {
-	position: absolute;
-	height: 100%;
-	width: 100%;
-	z-index: 0;
-	background-size: cover;
-	background-position: center center;
-	background-repeat: no-repeat;
-	opacity: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  opacity: 0;
 }

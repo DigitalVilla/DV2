@@ -1,32 +1,3 @@
-// RESPONSIVE .BREAKPOINTS
-
-// Extra small mobile
-$min-width: 320px;
-// Small mobile
-$screen-xs: 360px;
-// Large mobile
-$screen-sm: 576px;
-// Small Tablet
-$screen-md: 768px;
-// Large Tablet
-$screen-lg: 992px;
-// iPad pro
-$screen-xl: 1200px;
-// laptop
-$screen-xxl: 1600px;
-// HD desktop
-$screen-xxl: 1920px;
-// $K Desktop
-$screen-4k: 3800px;
-
-/* -----------------------
-   ------ Functions ------
-   ----------------------- */
-
-@function v($var) {
-	@return var(--#{$var});
-}
-
 
 /* ---------------------
    ------ MIXINS ------
@@ -93,7 +64,7 @@ $screen-4k: 3800px;
 }
 
 // Desktop first approach
-@mixin mediaDn($screen:$screen-md) {
+@mixin mediaDn($screen:$screen-md, $landscape:false) {
 	@if $landscape {
 		@media only screen and (min-width: $screen - 1px) and (orientation: landscape) {
 			@content;
@@ -162,6 +133,12 @@ $screen-4k: 3800px;
 		display: table;
 		clear: both;
 	}
+}
+
+.img-fit {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
 }
 
 /**

@@ -1,36 +1,4 @@
 @include Page ('About') {
-
-	@include animateIn {
-		.scrambled {
-			&-text {
-				animation: fadeIn 2s ease-in-out;
-			}
-		}
-
-		img {
-			&.left {
-				clip-path: polygon(0 0, 47% 0, 47% 100%, 0 100%);
-				transform: translate3d(-50%, -50%, 0);
-			}
-
-			&.right {
-				clip-path: polygon(47% 0%, 100% 0%, 100% 100%, 47% 100%);
-				transform: translate3d(-50%, -40%, 0);
-			}
-		}
-	}
-
-
-	@include animateOut {
-		.scrambled {
-			opacity: 0;
-
-			&-text {
-				animation: fadeOut .4s ease-in-out;
-			}
-		}
-	}
-
 	.scrambled {
 		&-container {
 			position: absolute;
@@ -40,37 +8,29 @@
 			text-align: center;
 			transform: translate3d(0, -50%, 0);
 
-			.title {
-				@include title;
-			}
-
-			@include media (md) {
+			@include media {
 				top: 350px;
-
 			}
 		}
 
 		&-text {
 			span {
-				color: $brand2;
+				color: var(--brand1);
 			}
 
 			animation: fadeIn 1s ease-in-out;
 		}
-
-
 	}
 
 	img {
 		border-radius: 50%;
 		position: absolute;
-		width: 100px;
 		left: 50%;
 		top: 120px;
 		transform: translate3d(-50%, -50%, 0);
 		transition: all 1s;
 
-		@include media (md) {
+		@include media {
 			top: 190px;
 			width: 150px;
 		}
@@ -79,5 +39,40 @@
 	.article {
 		position: relative;
 		top: 450px;
+	}
+}
+
+@include animateIn ('About')  {
+	.scrambled {
+		&-text {
+			animation: fadeIn 2s ease-in-out;
+		}
+	}
+
+	img {
+		opacity: 1;
+		&.left {
+			clip-path: polygon(0 0, 47% 0, 47% 100%, 0 100%);
+			transform: translate3d(-50%, -50%, 0);
+		}
+
+		&.right {
+			clip-path: polygon(47% 0%, 100% 0%, 100% 100%, 47% 100%);
+			transform: translate3d(-50%, -40%, 0);
+		}
+	}
+}
+
+
+@include animateOut ('About')  {
+	.scrambled {
+		opacity: 0;
+
+		&-text {
+			animation: fadeOut .4s ease-in-out;
+		}
+	}
+	img {
+		opacity: 0;
 	}
 }

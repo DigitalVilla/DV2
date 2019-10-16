@@ -2,7 +2,7 @@
 $arrow-side: 10.5px;
 $arrow-head: 14px;
 $slides-gap: calc(50% - 100px);
-$nav-color: $white;
+$nav-color: white;
 
 
 .lineSpan {
@@ -11,11 +11,11 @@ $nav-color: $white;
 	top: 60%;
 	left: 0;
 	height: 3px;
-	width: $space-lg;
+	width: var(--space-lg);
 	background: $nav-color;
 
 	@media only screen and (min-width: $screen-md) {
-		width: $space-xl;
+		width: var(--space-xl);
 	}
 }
 
@@ -24,14 +24,14 @@ $nav-color: $white;
 
 	ul {
 		li {
-			height: $space-lg;
-			width: $space-xxl;
-			margin: $space-lg 0;
+			height: var(--space-lg);
+			width: var(--space-xxl);
+			margin: var(--space-lg 0);
 
 			&:hover a.active span,
 			a.active span {
 				@extend .lineSpan;
-				width: $space-xl;
+				width: var(--space-xl);
 			}
 
 			&:hover a span {
@@ -45,7 +45,7 @@ $nav-color: $white;
 
 			.fp-tooltip {
 				color: $nav-color;
-				top: -$space-sm;
+				top: -var(--space-sm);
 				font-size: 12px;
 
 				&.fp-left {
@@ -58,12 +58,12 @@ $nav-color: $white;
 			}
 
 			@media only screen and (min-width: $screen-md) {
-				height: $space-xl;
-				margin: $space-lg $space-lg;
+				height: var(--space-xl);
+				margin: var(--space-lg) var(--space-lg);
 
 				&:hover a.active span,
 				a.active span {
-					width: $space-xxl;
+					width: var(--space-xxl);
 				}
 
 				.fp-tooltip {

@@ -1,7 +1,18 @@
 @include Page ('Works') {
+	figure {
+		margin: auto;
+		height: 300px;
+		width: 200px;
+		overflow: hidden;
+		border-radius: 10px;
 
-
-	@include animateIn {}
-
-	@include animateOut {}
+		img {
+			// @extend .img-fit;
+			object-fit: cover;
+		}
+	}
 }
+
+@include animateIn ('Works') {}
+
+@include animateOut ('Works') {}

@@ -1,15 +1,15 @@
-@mixin title {
-	font-size: 3rem;
-	color: #fff;
+.title {
+	font-size: var(--text-xl);
+	color: var(--white);
 	letter-spacing: 0.1em;
-	font-weight: 100;
-	text-shadow: 0 10px 30px rgba(2, 11, 22, 0.5);
+	font-weight: 200;
+	text-shadow: var(--darkShadow);
 	text-transform: uppercase;
 	line-height: 1;
 }
 
 svg {
-	fill: v(font-color);
+	fill: var(--font-color);
 }
 
 .svg-xl {

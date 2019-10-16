@@ -1,19 +1,18 @@
 // third parties
 @import './vendors/bootstrap/grid';
-//base
-@import './variables';
-@import './mixins';
-@import './base';
-
-@import './base/typography';
 @import './vendors/AniamteCSS/animate.css';
+//base
+@import './base/variables';
+@import './base/mixins';
+@import './base/base';
+@import './base/typography';
 //components
 @import './components/menu';
-// @import './components/elements';
-// @import './components/fullpage';
+@import './components/slashed';
+@import './components/fullpage';
 //pages
-// @import './pages/BasePage';
-// @import './pages/Home';
-// @import './pages/About';
-// @import './pages/Works';
-// @import './pages/Contact';
+@import './pages/layout';
+@import './pages/Home';
+@import './pages/About';
+@import './pages/Works';
+@import './pages/Contact';

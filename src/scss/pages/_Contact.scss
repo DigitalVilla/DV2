@@ -1,6 +1,8 @@
 @include Page ('Contact') {
 
-	@include animateIn {}
 
-	@include animateOut {}
 }
+
+@include animateIn ('Contact') {}
+
+@include animateOut ('Contact') {}

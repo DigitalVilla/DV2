@@ -1,11 +1,11 @@
 .menu {
 	// constants
-	$vertical: false;
+	$vertical: true;
 	$menu-items: 5;
 	// variables
-	--btn-width: 54px;
+	--btn-width: 42px;
 	--btn-height: 25px;
-	--position: var(--space);
+	--position: var(--space-md);
 	--gutter: var(--space);
 	--nav-size: calc((var(--btn-height) + var(--gutter)) * #{$menu-items});
 
@@ -20,6 +20,7 @@
 		height: 100%;
 
 		img {
+			@extend .img-fit;
 			animation: fadeIn 1s ease-in-out;
 		}
 	}
@@ -126,7 +127,7 @@
 
 	@include media {
 		--btn-size: 40px;
-		--btn-width: 72px;
+		--btn-width: 70px;
 		--btn-height: 40px;
 		--gutter: var(--space-lg);
 		--position: var(--space-xl);

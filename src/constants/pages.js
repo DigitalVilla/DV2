@@ -6,18 +6,18 @@ import Contact from '../layout/Contact.jsx';
 export default [
     {
         name: 'Home',
-        anchor:Home
+        page: Home
     },
     {
         name: 'About',
-        anchor:About
+        page: About
     },
     {
         name: 'Works',
-        anchor:Works
+        page: Works
     },
     {
         name: 'Contact',
-        anchor:Contact
+        page: Contact
     }
 ]

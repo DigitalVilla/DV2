@@ -3,16 +3,41 @@
 // see: https://codyhouse.co/blog/post/css-custom-properties-vs-sass-variables
 // -----------------------------------------------------------------------------
 
+	// Extra small mobile
+	$min-width: 320px;
+	// Small mobile
+	$screen-xs: 360px;
+	// Large mobile
+	$screen-sm: 576px;
+	// Small Tablet
+	$screen-md: 768px;
+	// Large Tablet
+	$screen-lg: 992px;
+	// iPad pro
+	$screen-xl: 1200px;
+	// laptop
+	$screen-xxl: 1600px;
+	// HD desktop
+	$screen-xxl: 1920px;
+	// $K Desktop
+	$screen-4k: 3800px;
+
+
+	//App :default
+	$brand1: #db2e60;
+	$brand2: #ce2d83;
+	$brand3: #8b45b8;
+	$brand4: #5539af;
+
 :root {
 	// Navbar
 	--navbar-height: 50px;
 	--transition: all 0.2s linear;
 
-	//App :default
-	--brand1: #9e1c41;
-	--brand2: #882057;
-	--brand3: #613180;
-	--brand4: #46277e;
+	--brand1: #{$brand1};
+	--brand2: #{$brand2};
+	--brand3: #{$brand3};
+	--brand4: #{$brand4};
 
 	// Service default
 	--success: #239976;
@@ -34,7 +59,8 @@
 	--font-color: var(--white);
 	--lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
 	--darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
-	--grad-bg: linear-gradient(to left bottom, var(--brand1), var(--brand3));;
+	--grad-bg: linear-gradient(to left bottom, var(--brand1), var(--brand3));
+	--grad-bg-dark:linear-gradient(to left bottom, #{darken($brand3, 35%)}, #{darken($brand1, 45%)});
 
 	// Regular font family
 	--text-font: 'Oswald',
@@ -71,4 +97,19 @@
 	--text-xl: calc(var(--text) * 3);
 	--text-xxl: calc(var(--text) * 5);
 	--text-xxxl: calc(var(--text) * 6);
+
+	@media only screen and (min-width: $screen-xs) {
+		--text: 1.2em;
+		--space: 10px;
+	}
+
+	@media only screen and (min-width: $screen-md) {
+		--text: 1.4em;
+		--space: 12px;
+	}
+
+	@media only screen and (min-width: $screen-xxl) {
+		--text: 1.6em;
+		--space: 14px;
+	}
 }

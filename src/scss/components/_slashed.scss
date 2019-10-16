@@ -1,0 +1,68 @@
+.slashed {
+	--slash-font-size: var(--text-lg);
+	--slash-color: var(--font-color);
+	--slash-angle: 9deg;
+	--slash-offset: 2px;
+	--slash-width: 120px;
+	--position: var(--space-md);
+
+	position: absolute;
+	transform: rotate3d(0, 0, 1, calc(var(--slash-angle) * -1)); //compensate for slashed angle
+	top: calc(var(--position) / 2);
+	left: var(--position);
+	width: calc(var(--slash-font-size) * 3.74);
+	height: calc(var(--slash-font-size) * 1.65);
+	z-index: 100;
+
+	.top,
+	.bot {
+		position: absolute;
+		font-size: var(--slash-font-size);
+		line-height: 100px;
+		font-family: var(--text-font);
+		font-weight: 400;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+		text-align: center;
+		overflow: hidden;
+		color: var(--slash-color);
+		text-shadow: 1px 1px 5px #0007;
+
+		&:before {
+			content: attr(title);
+			position: absolute;
+			left: 0;
+			// right: 0; //centered
+			transform: rotate(calc(var(--slash-angle)* 1)); //slashed angle
+		}
+	}
+
+	.top {
+		top: 0;
+		left: var(--slash-offset);
+		right: 0;
+		bottom: 50%;
+
+		&:before {
+			bottom: -50px;
+		}
+	}
+
+	.bot {
+		top: 50%;
+		left: 0;
+		right: var(--slash-offset);
+		bottom: 0;
+
+		&:before {
+			top: -50px;
+		}
+	}
+
+	@include media {
+		--slash-offset: 4px;
+		--slash-angle: 12deg;
+		--slash-width: 250px;
+		--position: var(--space-xl);
+	}
+}

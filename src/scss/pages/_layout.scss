@@ -1,0 +1,54 @@
+@keyframes slash {
+	from {
+		left: 0;
+		right: 0;
+	}
+}
+
+.slashAnimation {
+	animation: fadeInDelayed 1.2s ease-in-out;
+
+	.top,
+	.bot {
+		animation: slash 1.2s ease-in-out;
+	}
+}
+
+.defaultPage {
+	width: 100%;
+	opacity: 0;
+	transition: all .5s;
+}
+
+@mixin Page ($class) {
+	.#{$class} {
+		@extend .defaultPage;
+		@content;
+	}
+}
+
+
+
+@mixin animateIn($class) {
+	section.active {
+		& .#{$class} {
+			--delay : 1.2s;
+			opacity: 1;
+
+			.slashed {
+				@extend .slashAnimation;
+			}
+
+			@content;
+		}
+	}
+}
+
+@mixin animateOut($class) {
+	section {
+		& .#{$class} {
+
+			@content;
+		}
+	}
+}
