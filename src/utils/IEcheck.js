@@ -18,22 +18,8 @@ var template = `
 export default (function msieversion() {
     var ua = window.navigator.userAgent;
     var msie = ua.indexOf("MSIE ");
-
-    if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) // If Internet Explorer, return version number
-    {
-        alert("IE");
+    if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
             document.body.innerHTML = template;
-            // document.getElementById('___gatsby').innerHTML = template;
-
-
-    } else // If another browser, return 0
-    {
-        console.log('Not IE');
-        setTimeout(() => {
-            //   document.getElementById('___gatsby').innerHTML = template;
-        }, 100);
-
     }
-
     return false;
 })();

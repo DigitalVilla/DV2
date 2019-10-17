@@ -1,5 +1,5 @@
 .Title {
-	font-size: var(--text-xl);
+	font-size: calc(var(--text-xl) *.8);
 	color: var(--white);
 	letter-spacing: 0.1em;
 	font-weight: 200;

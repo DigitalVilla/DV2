@@ -15,6 +15,7 @@ html {
 	font-size: 62.5%;
 	max-width: 100vw;
 	min-width: $min-width;
+	overflow: hidden;
 }
 
 body {
@@ -24,7 +25,6 @@ body {
 	font-size: var(--text);
 	font-family: 'Oswald',sans-serif;
 	font-family: var(--text-font);
-	background-image: linear-gradient(to left bottom, #291436, #1e050c);
 	background-image: var(--grad-bg-dark);
 }
 
