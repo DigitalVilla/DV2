@@ -66,13 +66,13 @@
 // Desktop first approach
 @mixin mediaDn($screen:$screen-md, $landscape:false) {
 	@if $landscape {
-		@media only screen and (min-width: $screen - 1px) and (orientation: landscape) {
+		@media only screen and (max-width: $screen - 1px) and (orientation: landscape) {
 			@content;
 		}
 	}
 
 	@else {
-		@media only screen and (min-width: $screen - 1px) {
+		@media only screen and (max-width: $screen - 1px) {
 			@content;
 		}
 	}
