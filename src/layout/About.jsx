@@ -32,7 +32,7 @@ const About = (props) => {
 	return (
 		<>
 			<div className="scrambled-container">
-				<NeoText options={neoOptions} animate={props.isVisible} />
+				<NeoText options={neoOptions} animate={true} />
 			</div>
 
 			<img className="left" src={ego} alt="Profile Left" />

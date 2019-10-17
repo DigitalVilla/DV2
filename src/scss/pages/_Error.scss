@@ -1,0 +1,54 @@
+
+.Error {
+	animation: fadeIn .5s linear;
+	height: 100vh;
+	width: 100vw;
+	overflow: hidden;
+	padding: 0;
+
+	#page-bg {
+		height: 100%;
+		width: 100%;
+		z-index: 0;
+		background-size: cover;
+		background-position: center center;
+		background-repeat: no-repeat;
+		opacity: .5;
+	}
+
+	.header {
+		@extend .Header;
+		height: 60vh;
+
+		h2 {
+			.break {
+				display: block !important;
+			}
+		}
+
+		h3 {
+			font-size: 2.3rem;
+			font-weight: 300;
+			position: absolute;
+			bottom: 10px;
+			left: 0;
+			right: 0;
+			a {
+				color: white;
+				border-bottom: 1px solid #fff;
+			}
+		}
+
+		.ie-btn {
+			background: transparent;
+			padding: 12px 32px;
+			border: 2px solid #fff;
+			color: #fff;
+			border-radius: 2px;
+			font-size: 18px;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+			margin: 12px;
+		}
+	}
+}

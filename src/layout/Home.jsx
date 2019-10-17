@@ -1,49 +1,31 @@
 import React from "react"
 import Icon from "../components/Icons.jsx"
+import video from "../images/nebula.mp4"
+import poster from "../constants/poster"
+import Banner from "../components/Banner"
+import Video from "../components/Video"
 import isMedia from "../utils/isMedia"
-import vid from "../images/nebula.mp4"
-import img_sm from "../images/nebula-sm.jpg"
-import img_md from "../images/nebula-md.jpg"
-import img_lg from "../images/nebula-lg.jpg"
-import img_4k from "../images/nebula.jpg"
-import logo_DV from "../images/logo_DV.png"
 
-export default function Home(props) {
-  let isMobile = isMedia("mobile")
-  let isPhone = isMedia("phone")
-
-  let source = isPhone ? "" : vid
-  let icon = isMobile ? "chevronCircleDn" : "mouse"
-  let dataset = isPhone ? {} : { "data-autoplay": "true" }
-
-  let poster = isMedia('phone') ? img_sm : isMedia('tablet') ? img_md
-		: isMedia('2kUp') ? img_4k : img_lg;
+const Home = props => {
+  let icon = isMedia("mobile") ? "chevronCircleDn" : "mouse"
 
   const handlePageDown = () => {
     props.api.moveTo(2)
   }
 
   return (
-      	<>
-		  {/* <div id="page-bg" style={{backgroundImage= `url(${poster})`}}></div> */}
-			<div className="header noSelect">
-				<img className="main-logo" src={logo_DV} alt="DV" />
-				<h1>Digital Villa | Media Agency, Web Design, Software Development, Graphic design, Website</h1>
-				<div className="title">
-					<span>Digital </span>
-					<span className="break"></span>
-					<span>Villa</span>
-				</div>
-				<h2>Transforming Ideas<span className="break"></span> Into living designs</h2>
-			</div>
-			<div className="video-container">
-				<video id="video" {...dataset} loop muted preload="true" poster={poster}>
-					<source data-src={source} type='video/mp4' />
-				</video>
-			</div>
-			<div className="scroll">
-				<Icon className="scroll-icon svg-md" icon={icon} action={handlePageDown} />
-			</div>
-		</>
+    <>
+      <Banner text1="Transforming Ideas" text2="With Living Designs" />
+      <Video poster={poster} media={video} />
+      <div className="scroll">
+        <Icon
+          className="scroll-icon svg-md"
+          icon={icon}
+          action={handlePageDown}
+        />
+      </div>
+    </>
   )
 }
+
+export default Home

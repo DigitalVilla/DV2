@@ -1,48 +1,6 @@
 @include Page ('Home') {
 	.header {
-		--base-gutter: calc(var(--space-lg) * .9);
-
-		left: 50%;
-		position: absolute;
-		text-align: center;
-		top: 50%;
-		transform: translate3d(-50%, -50%, 0);
-		z-index: 1;
-
-		.main-logo {
-			height: calc(var(--text-xxxl) * 1.3);
-			margin: 0 0 var(--base-gutter);
-		}
-
-		h1 {
-			@extend .reader-only;
-		}
-
-		.title {
-			color: #fff;
-			letter-spacing: var(--space-sm);
-			font-size: var(--text-xl);
-			margin: 0 0 var(--base-gutter);
-			font-weight: 400;
-			line-height: .9;
-			text-align: center;
-			text-transform: uppercase;
-			width: 70vw;
-		}
-
-		h2 {
-			font-weight: 300;
-			letter-spacing: 1px;
-			text-transform: capitalize;
-			line-height: .8;
-			font-size: var(--text-md);
-
-		}
-
-		.break {
-			@include hide;
-			margin: var(--space);
-		}
+		@extend .Header;
 	}
 
 	.video-container {
