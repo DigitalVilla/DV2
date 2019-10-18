@@ -1,0 +1,17 @@
+.video-container {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		width: 100vw;
+		height: 100vh;
+		z-index: 0;
+		overflow: hidden;
+
+		video {
+			min-width: 100%;
+			min-height: 100%;
+			width: auto;
+			height: auto;
+			@extend .abs-center;
+		}
+	}

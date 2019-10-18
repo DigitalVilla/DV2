@@ -3,23 +3,6 @@
 		@extend .Header;
 	}
 
-	.video-container {
-		video {
-			background-position: center center;
-			object-fit: cover;
-			max-width: 100%;
-			min-width: 100%;
-			min-height: 100%;
-			width: auto;
-			height: auto;
-			z-index: 0;
-			position: absolute;
-			right: 0;
-			top: 0;
-			// opacity: .9;
-		}
-	}
-
 	.scroll {
 		&-icon {
 			z-index: 2;
@@ -34,6 +17,7 @@
 		}
 	}
 }
+
 @include animateIn('Home') {
 	.main-logo {
 		animation: bounceInDown calc(var(--delay) + .2s) ease-in-out;
@@ -51,12 +35,14 @@
 		opacity: 1;
 		animation: fadeInDelayed var(--delay) ease-in-out;
 	}
-	.page-bg  {
+
+	.page-bg {
 		animation: fadeIn var(--delay) ease-in-out;
 	}
 
 	.scroll {
 		animation: fadeInDelayed var(--delay) ease-in-out;
+
 		&-icon {
 			animation: float 2s ease-in-out infinite;
 			animation-delay: var(--delay);
@@ -65,7 +51,8 @@
 }
 
 @include animateOut('Home') {
-	--delay : .4s;
+	--delay: .4s;
+
 	.main-logo {
 		animation: fadeOutRight var(--delay) ease-in-out;
 	}
@@ -73,6 +60,7 @@
 	.title {
 		animation: fadeOutLeft var(--delay) ease-in-out;
 	}
+
 	video {
 		opacity: 0;
 		animation: fadeOut var(--delay) ease-in-out;

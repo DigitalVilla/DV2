@@ -1,0 +1,35 @@
+iframe {
+	@extend .abs-center;
+	width: 90vw;
+	height: 90vh;
+	z-index: 0;
+	border: none;
+}
+
+.black-btn {
+	background-image: linear-gradient(#464041, #181717);
+	color: #fff;
+	border: none;
+	cursor: pointer;
+	border-radius: 4rem;
+	padding: 1rem 3rem;
+	box-shadow: 0 0.5rem .7rem 0em rgba(0, 0, 0, 0.2);
+	margin: 1rem 0;
+	font-size: 1.5rem;
+	font-weight: 600;
+	user-select: none;
+	text-transform: capitalize;
+	position: relative;
+	transition: background-image 3s !important;
+
+	&:hover,
+	&:active {
+		background-image: linear-gradient(to right top, $brand2, $brand3);
+		// transform: translateY(-.1rem);
+	}
+
+	&:active {
+		transform: translateY(.1rem);
+		box-shadow: 0 0.2rem .5rem 0em rgba(0, 0, 0, 0.2);
+	}
+}

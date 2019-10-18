@@ -4,7 +4,7 @@ import Base from "../layout/Base"
 import Menu from "../components/Menu.jsx"
 import pages from "../constants/pages"
 import "../scss/main.scss"
-import IEcheck from '../utils/IEcheck'
+import IEcheck from '../utils/IEcheck' // eslint-disable-line no-unused-vars
 
 export default function FullPage() {
   const [isOpen, setIsOpen] = useState(false)

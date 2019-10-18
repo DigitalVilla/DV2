@@ -95,8 +95,7 @@
 
 						@else {
 							transform: translate(var(--nav-size), 0);
-							transition-property: transform, opacity;
-							transition-duration: ($i) * .15s, 2s;
+							transition: transform ($i) * .15s, opacity ($i) * .1s;
 						}
 					}
 
@@ -106,8 +105,7 @@
 							transform: translate3d(0, 0, 0);
 
 							@if $vertical {
-								transition-property: transform, opacity;
-								transition-duration: ($i) * .15s, .8s;
+								transition-property: transform  ($i) * .15s, opacity ($i) * .2s;
 							}
 
 							@else {

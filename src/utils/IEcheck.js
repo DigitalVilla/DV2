@@ -18,7 +18,7 @@ var template = `
 export default (function msieversion() {
     var ua = window.navigator.userAgent;
     var msie = ua.indexOf("MSIE ");
-    if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
+    if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) { // eslint-disable-line no-useless-escape
             document.body.innerHTML = template;
     }
     return false;

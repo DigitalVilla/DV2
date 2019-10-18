@@ -30,7 +30,9 @@ const About = props => {
         <NeoText options={neoOptions} animate={isVisible()} />
       </div>
 		<SplitImage image={ego} className='split-about'/>
-      <div className="article"></div>
+      <div className="article">
+	    <button class="black-btn" href="#">View More</button>
+	  </div>
     </>
   )
 }
