@@ -4,8 +4,7 @@ import img_lg from "../images/nebula-lg.jpg"
 import img_4k from "../images/nebula.jpg"
 import isMedia from "../utils/isMedia"
 
- let poster = isMedia('phone') ? img_sm : isMedia('tablet') ? img_md
-		: isMedia('2kUp') ? img_4k : img_lg;
+ let poster = img_lg;
 
 // export default function getPoster() {
 //     return poster;

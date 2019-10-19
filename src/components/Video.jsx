@@ -1,8 +1,7 @@
 import React from 'react'
-import isMedia from "../utils/isMedia"
 
 const Video = ({ poster, className, media, id }) => {
-	let isPhone = isMedia("phone");
+	let isPhone =false;
 	let source = isPhone ? "" : media;
 	let dataset = isPhone ? {} : { "data-autoplay": "true" };
 	let datatype = media.substr(media.indexOf('.') + 1);

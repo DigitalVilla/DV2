@@ -8,16 +8,16 @@ export default [
         name: 'Home',
         page: Home
     },
-    {
-        name: 'About',
-        page: About
-    },
-    {
-        name: 'Works',
-        page: Works
-    },
-    {
-        name: 'Contact',
-        page: Contact
-    }
+    // {
+    //     name: 'About',
+    //     page: About
+    // },
+    // {
+    //     name: 'Works',
+    //     page: Works
+    // },
+    // {
+    //     name: 'Contact',
+    //     page: Contact
+    // }
 ]
